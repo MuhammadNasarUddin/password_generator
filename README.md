@@ -1,8 +1,8 @@
-![Alt text](pswd_genrator.png)
+![Alt text](pswd.png)
 
-# Streamlit Password Generator
+# Flask Password Generator
 
-This project is a simple password generator built using Python and Streamlit, a web application framework. It provides a user-friendly interface to generate strong and secure passwords based on specified length and symbol preferences.
+This project is a simple password generator built using Python and Flask, a web application framework. It provides a user-friendly interface to generate strong and secure passwords based on specified length and symbol preferences.
 
 ## Features
 
@@ -16,14 +16,15 @@ This project is a simple password generator built using Python and Streamlit, a 
 2. **Include Symbols:** Check the box if you want to include symbols in the generated password.
 3. **Generate Password:** Click the button to generate a strong password based on the provided criteria.
 
-This project serves as a simple demonstration of using Streamlit to create a functional and user-friendly password generation tool. Feel free to fork, modify, or enhance it for your specific needs!
+This project serves as a simple demonstration of using flask to create a functional and user-friendly password generation tool. Feel free to fork, modify, or enhance it for your specific needs!
 
 ## Usage
 
 To run the app locally:
 1. Clone the repository.
-2. Install the required dependencies (`streamlit`).
-3. Run the application using `streamlit run password_generator.py`.
+2. cd password_generator.
+3. pip install -r requirements.txt
+3. Run the application using `python app.py`.
 
 
 
