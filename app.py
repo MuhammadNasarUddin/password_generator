@@ -1,6 +1,8 @@
-import streamlit as st
+from flask import Flask, render_template, request
 import string
 import random
+
+app = Flask(__name__)
 
 def generate_password(length=12, use_symbols=True):
     characters = string.ascii_letters + string.digits
@@ -10,15 +12,14 @@ def generate_password(length=12, use_symbols=True):
     password = ''.join(random.choice(characters) for _ in range(length))
     return password
 
-def main():
-    st.title("Password Generator")
-
-    password_length = st.number_input("Enter password length", min_value=4, max_value=50, value=16)
-    include_symbols = st.checkbox("Include Symbols")
-
-    if st.button("Generate Password"):
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    generated_password = ''
+    if request.method == 'POST':
+        password_length = int(request.form['password_length'])
+        include_symbols = 'include_symbols' in request.form
         generated_password = generate_password(password_length, include_symbols)
-        st.success(f"Generated Password: {generated_password}")
+    return render_template('index.html', generated_password=generated_password)
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    app.run(debug=True)
