@@ -24,7 +24,7 @@ To run the app locally:
 1. Clone the repository.
 2. cd password_generator.
 3. pip install -r requirements.txt
-3. Run the application using `python app.py`.
+3. Run the application using `python password_generator.py`.
 
 
 
